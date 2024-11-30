@@ -174,16 +174,32 @@ const getMatriculaConclusao = function(curso, ano) {
     let cursoAluno = String(curso).toUpperCase()
     let anoConclusao = String(ano).toUpperCase()
     let array = []
+    let status = false
 
     requisicaoAlunos.alunos.forEach(function(item) {
         item.curso.forEach(function(sigla) {
             if(cursoAluno == sigla.sigla.toUpperCase()) {
-             
-            } else if {
-                
-            }
+                if(anoConclusao == sigla.conclusao) {
+                    array.push (
+                                    {
+                                        foto: item.foto,
+                                        nome: item.nome,
+                                        matricula: item.matricula,
+                                        sexo: item.sexo,
+                                        nomeCurso: sigla.sigla,
+                                        conclusaoCurso: sigla.conclusao
+                                    }
+                                )
+                    status = true
+                }    
+            } 
         })
     })
+    if(status == true) {
+        return array
+    } else {
+        return status
+    }
 }
 
 
@@ -193,3 +209,4 @@ const getMatriculaConclusao = function(curso, ano) {
 //console.log(getAlunosCurso('rds'))
 //console.log(getStatusAluno('cursando'))
 //console.log(getStatusCurso('ds', 'reprovado'))
+//console.log(getMatriculaConclusao("rds", 2024))
