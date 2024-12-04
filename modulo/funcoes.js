@@ -1,6 +1,6 @@
 /* *********************************************************************
 * Objetivo: Criar um total de 7 funções para uma API futura solicitada por uma escola
-* Data: 18/10/2024
+* Data: 22/11/2024
 * Autor: Hugo Lopes
 * Versão: 1.0
 * **********************************************************************/
@@ -210,3 +210,13 @@ const getMatriculaConclusao = function(curso, ano) {
 //console.log(getStatusAluno('cursando'))
 //console.log(getStatusCurso('ds', 'reprovado'))
 //console.log(getMatriculaConclusao("rds", 2024))
+
+module.exports = {
+    getListadeCursos,
+    getListadeAlunos,
+    getAlunoMatricula,
+    getAlunosCurso,
+    getStatusAluno,
+    getStatusCurso,
+    getMatriculaConclusao
+}
