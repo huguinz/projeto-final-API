@@ -13,25 +13,25 @@ Projeto final do 2º semestre do curso de Desenvolvimento de Sistemas da institu
 
 - - - 
 
-#**Um pouco mais sobre a API**
+# **Um pouco mais sobre a API**
 Essa API foi desenvolvida para a escola Lion School, com o objetivo de facilitar alguma busca por alunos através de algum filtro em específico. Essa API tem o poder de mostrar todas as informações de todos os alunos ou cursos cadastrados no sistema. Essa aplicacão foi desenvolvida em poucas semanas, por isso é possível que haja atualizações futuras visando novas funcionalidades e melhor performance e experiência do usuário.
 
 - - -
 
-#**Tecnologias utilizadas**
+# **Tecnologias utilizadas**
 - JavaScript
 - Node JS
 - Methods *express*, *cors*
 - Git
 - Markdown
 
-###**Última atualização**
+### **Última atualização**
 04/12/2024
 
-###**Versão atual**
+### **Versão atual**
 1.0.1
 
-###**Créditos deste projeto**
+### **Créditos deste projeto**
 [Hugo Lopes][site-linkedin]
 
 [site-jandira]: https://sp.senai.br/unidade/jandira/
