@@ -22,8 +22,49 @@ app.use((request, response, next)=> {
 
 let lionSchool = require('./funcoes')
 
+app.get('/v1/lion-school/alunos/cursos/:cursos',cors(),async function (request, response) {
+    let uf = request.params.cursos
+    let dados = lionSchool.getAlunosCurso(uf)
+     
+     if(dados){
+         response.status(200)
+         response.json(dados)
+     }else{
+         response.status(404) 
+         response.json({'status': 404, 'message': 'Aluno não localizado.'})
+     }
+})
 
-app.get('/v1/lion-school/lista/:cursos',cors(),async function (request, response) {
+app.get('/v1/lion-school/alunos/filtro', cors(), async function (request, response) {
+    let uf = request.query.status
+
+    let uf2 = request.query.curso
+    let uf3 = request.query.status2
+
+    let uf4 = request.query.curso2
+    let uf5 = request.query.ano
+
+    let dadosA = lionSchool.getStatusAluno(uf)
+    let dadosB = lionSchool.getStatusCurso(uf2, uf3)
+    let dadosC = lionSchool.getMatriculaConclusao(uf4, uf5)
+
+    if (dadosA) {
+        response.status(200)
+        response.json(dadosA)
+    } else if (dadosB) {
+        response.status(200)
+        response.json(dadosB)
+    } else if (dadosC) {
+        response.status(200)
+        response.json(dadosC)
+    } else {
+        response.status(404)
+        response.json({'status': 404, 'message': 'Aluno não localizado.'})
+    }
+
+})
+
+app.get('/v1/lion-school/cursos',cors(),async function (request, response) {
 
     let uf = request.params.cursos
     let dados = lionSchool.getListadeCursos(uf)
@@ -37,7 +78,7 @@ app.get('/v1/lion-school/lista/:cursos',cors(),async function (request, response
      }
 })
 
-app.get('/v1/lion-school/listar/:alunos',cors(),async function (request, response) {
+app.get('/v1/lion-school/alunos',cors(),async function (request, response) {
 
     let uf = request.params.alunos
     let dados = lionSchool.getListadeAlunos(uf)
@@ -51,7 +92,7 @@ app.get('/v1/lion-school/listar/:alunos',cors(),async function (request, respons
      }
 })
 
-app.get('/v1/lion-school/aluno/:matricula',cors(),async function (request, response) {
+app.get('/v1/lion-school/alunos/:matricula',cors(),async function (request, response) {
 
     let uf = request.params.matricula
     let dados = lionSchool.getAlunoMatricula(uf)
@@ -65,35 +106,9 @@ app.get('/v1/lion-school/aluno/:matricula',cors(),async function (request, respo
      }
 })
 
-app.get('/v1/lion-school/alunos/:curso',cors(),async function (request, response) {
-    let uf = request.params.curso
-    let dados = lionSchool.getAlunosCurso(uf)
-     
-     if(dados){
-         response.status(200)
-         response.json(dados)
-     }else{
-         response.status(404) 
-         response.json({'status': 404, 'message': 'Aluno não localizado.'})
-     }
-})
-
-app.get('/v1/lion-school/status/:status',cors(),async function (request, response) {
-    let uf = request.params.status
-    let dados = lionSchool.getStatusAluno(uf)
-     
-     if(dados){
-         response.status(200)
-         response.json(dados)
-     }else{
-         response.status(404) 
-         response.json({'status': 404, 'message': 'Status não localizado.'})
-     }
-})
-
 app.get('/v1/lion-school/status/:curso/:status',cors(),async function (request, response) {
-    let uf = request.params.curso
-    let uf2 = request.params.status
+    let uf = request.query.curso
+    let uf2 = request.query.status
     let dados = lionSchool.getStatusCurso(uf, uf2)
      
      if(dados){
