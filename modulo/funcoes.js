@@ -1,6 +1,6 @@
 /* *********************************************************************
 * Objetivo: Criar um total de 7 funções para uma API futura solicitada por uma escola
-* Data: 18/10/2024
+* Data: 22/11/2024
 * Autor: Hugo Lopes
 * Versão: 1.0
 * **********************************************************************/
@@ -174,6 +174,7 @@ const getMatriculaConclusao = function(curso, ano) {
     let cursoAluno = String(curso).toUpperCase()
     let anoConclusao = String(ano).toUpperCase()
     let array = []
+    let status = false
 
     requisicaoAlunos.alunos.forEach(function(item) {
         item.curso.forEach(function(sigla) {
@@ -181,6 +182,11 @@ const getMatriculaConclusao = function(curso, ano) {
             }    
         })
     })
+    if(status == true) {
+        return array
+    } else {
+        return status
+    }
 }
 
 
@@ -190,3 +196,14 @@ const getMatriculaConclusao = function(curso, ano) {
 //console.log(getAlunosCurso('rds'))
 //console.log(getStatusAluno('cursando'))
 //console.log(getStatusCurso('ds', 'reprovado'))
+//console.log(getMatriculaConclusao("rds", 2024))
+
+module.exports = {
+    getListadeCursos,
+    getListadeAlunos,
+    getAlunoMatricula,
+    getAlunosCurso,
+    getStatusAluno,
+    getStatusCurso,
+    getMatriculaConclusao
+}
