@@ -211,6 +211,7 @@ const getMatriculaConclusao = function(curso, ano) {
 //console.log(getStatusCurso('ds', 'reprovado'))
 //console.log(getMatriculaConclusao("rds", 2024))
 
+//exportar arquivos
 module.exports = {
     getListadeCursos,
     getListadeAlunos,
