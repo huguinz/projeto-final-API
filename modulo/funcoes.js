@@ -178,10 +178,7 @@ const getMatriculaConclusao = function(curso, ano) {
     requisicaoAlunos.alunos.forEach(function(item) {
         item.curso.forEach(function(sigla) {
             if(cursoAluno == sigla.sigla.toUpperCase()) {
-             
-            } else if {
-                
-            }
+            }    
         })
     })
 }
