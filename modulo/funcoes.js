@@ -179,7 +179,20 @@ const getMatriculaConclusao = function(curso, ano) {
     requisicaoAlunos.alunos.forEach(function(item) {
         item.curso.forEach(function(sigla) {
             if(cursoAluno == sigla.sigla.toUpperCase()) {
-            }    
+                if(anoConclusao == sigla.conclusao) {
+                    array.push (
+                                    {
+                                        foto: item.foto,
+                                        nome: item.nome,
+                                        matricula: item.matricula,
+                                        sexo: item.sexo,
+                                        nomeCurso: sigla.sigla,
+                                        conclusaoCurso: sigla.conclusao
+                                    }
+                                )
+                    status = true
+                }    
+            } 
         })
     })
     if(status == true) {

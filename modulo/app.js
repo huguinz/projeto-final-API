@@ -118,6 +118,8 @@ app.get('/v1/lion-school/alunos/:curso/:ano',cors(),async function (request, res
          response.json({'status': 404, 'message': 'Status não localizado.'})
      }
 })
-app.listen('8080', function() {
-    console.log('API aguardando requisições...')
+const PORT = process.env.PORT || 8080
+app.listen(PORT, function() {
+    console.log(`API rodando na porta ${PORT}...`)
 })
+
