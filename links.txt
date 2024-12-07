@@ -1,0 +1,22 @@
+LINKS RENDER:
+
+Listar Cursos:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/cursos
+
+Listar Alunos:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos
+
+Listar alunos pela matricula:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos/20151001002
+
+Listar alunos pelo curso:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos/cursos/ds
+
+Listar alunos pelo status:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos/filtro?status=finalizado
+
+Listar alunos pelo curso e pelo seu status:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos/filtro?curso=ds&status2=aprovado
+
+Listar alunos pelo curso e pelo seu ano de conclusao:
+https://projeto-final-api-8l7y.onrender.com/v1/lion-school/alunos/filtro?curso2=rds&ano=2024
